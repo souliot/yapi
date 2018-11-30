@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 
 # yapi初始化后会有一个init.lock文件
 lockPath="/yapi/init.lock"
