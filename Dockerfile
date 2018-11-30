@@ -1,8 +1,9 @@
 FROM node:9.2-alpine as builder
 RUN apk add --no-cache git python make openssl
 RUN mkdir /yapi 
-ADD yapi-1.4.1.tar.gz /yapi/vendors
-RUN cd /yapi/vendors && \
+ADD yapi-1.4.1.tar.gz /yapi
+RUN mv yapi/yapi-1.4.1 /yapi/vendors && \
+    cd /yapi/vendors && \
     npm install --production --registry https://registry.npm.taobao.org
 
 
