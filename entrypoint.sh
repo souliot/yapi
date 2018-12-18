@@ -9,7 +9,7 @@ cd /yapi/vendors
 
 
 # 如果初始化文件文件存在,则直接运行,否则初始化
-if [ ! -f "$lockPath" ]
+if [ ! -e "$lockPath" ]
 then
   # 启动Yapi初始化
   node server/install.js
