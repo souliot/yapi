@@ -1,5 +1,5 @@
-FROM node:9.2-alpine as builder
-ENV VERSION=1.5.6 
+FROM node:13.12.0-alpine as builder
+ENV VERSION=1.8.9 
 RUN apk add --no-cache git python make openssl
 RUN mkdir /yapi 
 ADD yapi-${VERSION}.tar.gz /yapi
@@ -8,7 +8,7 @@ RUN mv yapi/yapi-${VERSION} /yapi/vendors && \
     npm install --production --registry https://registry.npm.taobao.org
 
 
-FROM node:9.2-alpine
+FROM node:13.12.0-alpine
 MAINTAINER BossLin
 COPY --from=builder /yapi/vendors /yapi/vendors
 # 工作目录
