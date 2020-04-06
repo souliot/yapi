@@ -1,6 +1,6 @@
-FROM node:13.12.0-alpine as builder
+FROM node:13.12.0 as builder
 ENV VERSION=1.8.9 
-RUN apk add --no-cache git python make openssl
+# RUN apk add --no-cache git python make openssl
 RUN mkdir /yapi 
 ADD yapi-${VERSION}.tar.gz /yapi
 RUN mv yapi/yapi-${VERSION} /yapi/vendors && \
