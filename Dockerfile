@@ -1,5 +1,6 @@
 FROM node:13.12.0 as builder
 ENV VERSION=1.10.1 
+RUN mkdir /yapi
 RUN curl https://codeload.github.com/YMFE/yapi/zip/refs/tags/v${VERSION} -o yapi.zip
 RUN unzip yapi.zip && mv yapi-${VERSION} /yapi/vendors && \
   cd /yapi/vendors && \
